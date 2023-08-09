@@ -1,0 +1,68 @@
+
+.firstDiv{
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.detailTex{
+    color:#ffffff; 
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(31,222,50,0.75);    
+}
+
+.imageDiv{
+    
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    
+}
+
+.image{
+
+    background: rgb(80, 233, 10);
+    width: 10rem; 
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 15px 6px rgba(0,0,0,0.46);
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(31,222,50,0.75);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(0,0,0,0.46);
+     
+    width: 300px;
+    height: 300px;
+    transition: 1s;
+    border-radius: 20px;
+    filter: saturate(234%);
+    -webkit-filter: saturate(234%);
+    -moz-filter: saturate(234%);
+    cursor:pointer;
+    
+}
+
+.image:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.gif{
+    
+    filter: saturate(234%);
+    -webkit-filter: saturate(234%);
+    -moz-filter: saturate(234%);
+}
+
+/* .gif:hover{
+    background-image: url('../img/rick-and-morty-dance.gif');
+} */

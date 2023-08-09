@@ -1,0 +1,26 @@
+
+.fistDiv{
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  /* padding-bottom: 50px; */
+ 
+
+}
+
+
+.div{
+  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 80%;
+  margin: auto; 
+  gap: 15px;
+ 
+}

@@ -1,0 +1,73 @@
+.divContainer{
+    background: rgb(80, 233, 10);
+    width: 10rem; 
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 15px 6px rgba(0,0,0,0.46);
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(31,222,50,0.75);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(0,0,0,0.46);
+   
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    position: relative;
+ 
+}
+
+.Button{
+    position: absolute;   
+    z-index: 30;   
+    right: 7px;   
+    width: 30px;
+    height: 30px;
+    background-color: rgb(16, 73, 40);
+    border-radius: 15px;
+    color: white;
+    cursor:pointer;
+    /* display: flex; 
+    flex-direction: row-reverse;
+    justify-content: flex-end; */
+
+}
+
+.imagen{
+    width: 150px;
+    height: 150px;
+    transition: 1s;
+    border-radius: 10px;
+    filter: saturate(234%);
+    -webkit-filter: saturate(234%);
+    -moz-filter: saturate(234%);
+    cursor:pointer;
+    
+}
+
+.imagen:hover{
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    box-shadow: 0px 0px 15px 15px #3e2f96;
+    -webkit-box-shadow: 0px 0px 10px 10px #1ebcec;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+
+.nameDiv{
+    
+    font-size: 50%;
+    color: rgb(16, 73, 40);;
+    text-decoration:none;
+    text-shadow: 0px 4px 12px rgba(0,0,0,1);
+}
+
+
+.kokoro{
+  border: none;
+  background: none;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 30;
+  cursor: pointer;
+}
+  

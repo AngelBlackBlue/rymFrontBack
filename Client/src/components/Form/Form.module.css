@@ -1,0 +1,82 @@
+.first{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+    padding: 70px;
+    
+}
+
+
+.DivPrincipal{
+    background: rgb(80, 233, 10);
+    width: 25rem;
+    height: 28rem;
+    border-radius: 20px ;
+    box-shadow: 1px 1px 36px 21px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 36px 21px rgba(31,222,50,0.75);
+    -moz-box-shadow: 1px 1px 36px 21px rgba(0,0,0,0.75);
+
+
+}
+
+
+
+.gif{
+    width: 400px;
+    height: auto;
+    filter: saturate(234%);
+    border-radius: 20px 20px 0px 0px;
+   
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+    padding: 10px;
+    font-weight: 700;
+}
+
+
+  
+.danger {
+    
+    font-size: 10px;
+    color: red;
+    font-weight: 700;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+    padding-bottom: 0px;
+}
+
+
+
+
+
+.myButton {
+    margin-top: 10px;;
+    padding:6px;  border-width:6px; border-radius:20px; border-style:groove; border-color:#36eb42; box-shadow: 6px 8px 12px 0px rgba(42,42,42,.82); font-weight:normal; font-style:none; font-family: sans-serif; 
+    background-color:#034716;  display:inline-block; cursor:pointer; 
+    font-size:15px;
+    color:#ffffff; 
+}
+
+.myButton:hover {
+	background-color:#000000;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

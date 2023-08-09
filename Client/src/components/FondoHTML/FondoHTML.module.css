@@ -1,0 +1,32 @@
+.fondo{
+    background-image:url('../img/633151.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    min-height:100vh
+
+
+
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('ruta-de-la-imagen'); */
+    /* background-size: cover;
+    background-position: center;
+    background-attachment:scroll; */
+    /* Otros estilos para el contenedor */
+    /* width: 100%;
+    height: 100vh;
+     */
+
+}
+
+.main{
+    background-attachment: fixed;
+    /* height: 100%; */
+      
+}
+
+
+
