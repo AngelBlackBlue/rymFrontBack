@@ -7,9 +7,9 @@ module.exports = [
       gender: 'Male',
       origin: {
          name: 'Earth (C-137)',
-         url: 'https://rickandmortyapi.com/api/location/1',
+         url: 'https://rickandmortyapi.com/api/location/1'
       },
-      image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
    },
    {
       id: 2,
@@ -19,9 +19,9 @@ module.exports = [
       gender: 'Male',
       origin: {
          name: 'unknown',
-         url: '',
+         url: ''
       },
-      image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+      image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
    },
    {
       id: 3,
@@ -31,9 +31,9 @@ module.exports = [
       gender: 'Female',
       origin: {
          name: 'Earth (Replacement Dimension)',
-         url: 'https://rickandmortyapi.com/api/location/20',
+         url: 'https://rickandmortyapi.com/api/location/20'
       },
-      image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+      image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
    },
    {
       id: 4,
@@ -43,9 +43,9 @@ module.exports = [
       gender: 'Female',
       origin: {
          name: 'Earth (Replacement Dimension)',
-         url: 'https://rickandmortyapi.com/api/location/20',
+         url: 'https://rickandmortyapi.com/api/location/20'
       },
-      image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+      image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
    },
    {
       id: 5,
@@ -55,8 +55,8 @@ module.exports = [
       gender: 'Male',
       origin: {
          name: 'Earth (Replacement Dimension)',
-         url: 'https://rickandmortyapi.com/api/location/20',
+         url: 'https://rickandmortyapi.com/api/location/20'
       },
-      image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
-   },
-];
+      image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg'
+   }
+]

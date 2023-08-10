@@ -1,54 +1,41 @@
-const URL = "https://rickandmortyapi.com/api/character/";
+const URL = 'https://rickandmortyapi.com/api/character/'
 const axios = require('axios')
+const cache = []
+const getCharById = (req, res) => {
+  const { id } = req.params
 
-const getCharById = (req, res)=>{
+  const localCharacter = cache.find(character => character.id === +id)
+  if (localCharacter) return res.status(200).json(localCharacter)
 
-    const {id} = req.params;
-
-    axios
+  axios
     .get(`${URL}/${id}`)
     .then((response) => {
-      
-        const { id, name, gender, species, origin, image, status } = response.data;
+      const { id, name, gender, species, origin, image, status } = response.data
 
-        const character = { 
-            id,
-            name,
-            gender,
-            species,
-            origin: origin.name,
-            image,
-            status,
-        };
+      const character = {
+        id,
+        name,
+        gender,
+        species,
+        origin: origin.name,
+        image,
+        status
+      }
 
-        if(character){
-            return res.status(200).json(character);
-        }
+      if (character) {
+        cache.push(character)
+        return res.status(200).json(character)
+      }
 
-        return res.status(404).send('Not fount');
-
-      }   
-    ) 
-    .catch((error)=> {
-      return res.status(500).send(error.message);
-    })                 
-
+      return res.status(404).send('Not fount')
+    }
+    )
+    .catch((error) => {
+      return res.status(500).send(error.message)
+    })
 }
 
-module.exports={getCharById};
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = { getCharById }
 
 // const axios = require ('axios');
 
@@ -56,10 +43,10 @@ module.exports={getCharById};
 //     axios
 //     .get(`https://rickandmortyapi.com/api/character/${id}`)
 //     .then((res) => {
-      
+
 //         const { id, name, gender, species, origin, image,    status } = res.data;
 
-//         const character = { 
+//         const character = {
 //             id,
 //             name,
 //             gender,
@@ -69,7 +56,6 @@ module.exports={getCharById};
 //             status,
 //           };
 
-          
 //         response.writeHead(200, {'Content-Type': "application/json"});
 //         response.end(JSON.stringify(character));
 //     })
@@ -79,7 +65,5 @@ module.exports={getCharById};
 
 //     })
 
-
-// }    
-// module.exports = getCharById; 
-
+// }
+// module.exports = getCharById;
