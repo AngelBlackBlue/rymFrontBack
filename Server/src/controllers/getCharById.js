@@ -1,41 +1,86 @@
 const URL = 'https://rickandmortyapi.com/api/character/'
 const axios = require('axios')
-const cache = []
-const getCharById = (req, res) => {
-  const { id } = req.params
+// const cache = []
 
-  const localCharacter = cache.find(character => character.id === +id)
-  if (localCharacter) return res.status(200).json(localCharacter)
+const getCharById = async (req, res) => {
 
-  axios
-    .get(`${URL}/${id}`)
-    .then((response) => {
-      const { id, name, gender, species, origin, image, status } = response.data
+  try {
 
-      const character = {
-        id,
-        name,
-        gender,
-        species,
-        origin: origin.name,
-        image,
-        status
-      }
+    const { id } = req.params
 
-      if (character) {
-        cache.push(character)
-        return res.status(200).json(character)
-      }
+    // const localCharacter = cache.find(character => character.id === +id)
+    // if (localCharacter) return res.status(200).json(localCharacter)
 
-      return res.status(404).send('Not fount')
+    let response = await axios(`${URL}/${id}`)
+
+    const { name, gender, species, origin, image, status } = response.data
+
+    const character = {
+      id: +id,
+      name,
+      gender,
+      species,
+      origin: origin.name,
+      image,
+      status
     }
-    )
-    .catch((error) => {
-      return res.status(500).send(error.message)
-    })
+
+    // cache.push(character)
+
+    return res.status(200).json(character)
+
+
+  } catch (error) {
+
+    return res.status(500).send(error.message)
+
+  }
+
+
 }
 
 module.exports = { getCharById }
+
+
+
+// const getCharById = (req, res) => {
+//   const { id } = req.params
+
+//   const localCharacter = cache.find(character => character.id === +id)
+//   if (localCharacter) return res.status(200).json(localCharacter)
+
+
+// axios
+//   .get(`${URL}/${id}`)
+//   .then((response) => {
+//     const { id, name, gender, species, origin, image, status } = response.data
+
+//     const character = {
+//       id,
+//       name,
+//       gender,
+//       species,
+//       origin: origin.name,
+//       image,
+//       status
+//     }
+
+//     cache.push(character)
+
+//     if (character) {
+//       return res.status(200).json(character)
+//     }
+
+//     return res.status(404).send('Not fount')
+//   }
+//   )
+//   .catch((error) => {
+//     return res.status(500).send(error.message)
+//   })
+
+
+
+
 
 // const axios = require ('axios');
 

@@ -5,31 +5,31 @@ const initialState = {
     allCharacters: [],
 };
 
-export const reducer = (state=initialState, {type, payload}) => { 
+export const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ADD_FAV:
-            return { ...state, myFavorites: payload, allCharacters: payload };    
+            return { ...state, myFavorites: payload, allCharacters: payload };
         case REMOVE_FAV:
-            return { ...state, myFavorites: payload };
+            return { ...state, myFavorites: payload, allCharacters: payload };
         case FILTER:
             let genderFilter = state.allCharacters;
-            if (payload !== 'todos'){
-                genderFilter = state.allCharacters.filter(Character=> Character.gender === +payload)
+            if (payload != 'todos') {
+                genderFilter = state.allCharacters.filter(Character => Character.gender == payload)
             }
-            return{
+            return {
                 ...state,
                 myFavorites: genderFilter
             }
         case ORDER:
             let orden = state.allCharacters;
-            if(payload === "A"){ orden = orden.sort((a, b) => a.id - b.id);};
-            if(payload === "D"){ orden = orden.sort((a, b) => b.id - a.id);};             
-            return{
+            if (payload === "A") { orden = orden.sort((a, b) => a.id - b.id); };
+            if (payload === "D") { orden = orden.sort((a, b) => b.id - a.id); };
+            return {
                 ...state,
-                myFavorites: orden               
-            } 
+                myFavorites: orden
+            }
         default:
-            return {...state}
+            return { ...state }
     }
 
 }
