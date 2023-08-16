@@ -1,8 +1,9 @@
 import style from './Card.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { addFav, removeFav } from '../../redux/actions';
 import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
+
 
 const  Card = ({id, name, image, gender, onClose, addFav, removeFav, myFavorites}) => {
 
@@ -19,17 +20,17 @@ const  Card = ({id, name, image, gender, onClose, addFav, removeFav, myFavorites
    };
 
    useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === id) {
-            setIsFav(true);
-         }
-      });
-   }, [myFavorites]);
+      myFavorites.forEach((fav) => { if (fav.id === id) { setIsFav(true); } });
+   }, [ myFavorites ]);
 
+   const location = useLocation()
    return (
       <div className={style.divContainer}>
          <button onClick={handleFavorite} className={style.kokoro}>{isFav ? '❤️' : '🤍'}</button>       
-         <button onClick={()=>{onClose(id)}} className={style.Button}>X</button>
+         {location.pathname === '/favorites' 
+            ? <button onClick={handleFavorite} className={style.Button}>X</button> 
+            : <button onClick={() => { onClose(id) }} className={style.Button}>X</button> 
+         }
          <div>
             <img src={image} alt='' className={style.imagen}/>
          </div>

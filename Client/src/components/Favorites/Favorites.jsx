@@ -4,7 +4,7 @@ import { filterCards, orderCards } from "../../redux/actions";
 import { useState } from "react";
 import style from './Favorite.module.css'
 
-const Favorites = ({myFavorites, onClose}) => { 
+const Favorites = ({myFavorites}) => { 
 
     const [aux, setAux] = useState(false);
 
@@ -44,7 +44,7 @@ const Favorites = ({myFavorites, onClose}) => {
                            id={id}
                            name={name}
                            image={image}
-                           onClose={onClose}
+                           
                         />
                     )
                   })
