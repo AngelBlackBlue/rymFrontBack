@@ -9,8 +9,13 @@ import Form from './components/Form/Form.jsx';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import Favorites from './components/Favorites/Favorites.jsx'
+import About from './components/About/About.jsx';
+
+
+
 
 function App() {
+   
 
    const [characters, setCharacters] = useState([]);
 
@@ -60,7 +65,9 @@ function App() {
 
       } catch (error) {
 
-         return res.status(500).send(error.message)
+         // return res.status(500).send(error.message)     
+
+         window.alert("Email y/o Password incorrecto")
 
       }
 
@@ -68,7 +75,7 @@ function App() {
 
    useEffect(() => {
       !access && navigate('/');
-   }, [access]);
+   }, [access, navigate]);
 
    return (
 
@@ -78,9 +85,9 @@ function App() {
             <Routes>
                <Route path='/' element={<Form login={login} />} />
                <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
-               <Route path='/about' />
+               <Route path='/about' element={<About/> }/>
                <Route path='/detail/:id' element={<Detail />} />
-               <Route path='/favorites' element={<Favorites onClose={onClose} />} />
+               <Route path='/favorites' element={<Favorites onClose={onClose} />} />              
             </Routes>
          </main>
       </div>

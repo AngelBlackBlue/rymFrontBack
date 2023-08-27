@@ -21,7 +21,7 @@ const  Card = ({id, name, image, gender, onClose, addFav, removeFav, myFavorites
 
    useEffect(() => {
       myFavorites.forEach((fav) => { if (fav.id === id) { setIsFav(true); } });
-   }, [ myFavorites ]);
+   }, [ myFavorites, id ]);
 
    const location = useLocation()
    return (

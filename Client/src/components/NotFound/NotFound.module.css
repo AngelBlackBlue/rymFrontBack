@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    /* Oculta la barra de desplazamiento */
+}
+
+.fondo {
+    background-image: url('../img/error404.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    filter: saturate(234%);
+    -webkit-filter: saturate(234%);
+    -moz-filter: saturate(234%);
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+}
+
+.text{
+
+    color: azure;
+    size: 36rem;
+}

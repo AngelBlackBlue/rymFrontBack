@@ -1,6 +1,7 @@
 import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action-type";
 
 const initialState = {
+   
     myFavorites: [],
     allCharacters: [],
 };
@@ -22,8 +23,8 @@ export const reducer = (state = initialState, { type, payload }) => {
             }
         case ORDER:
             let orden = state.allCharacters;
-            if (payload === "A") { orden = orden.sort((a, b) => a.id - b.id); };
-            if (payload === "D") { orden = orden.sort((a, b) => b.id - a.id); };
+            if (payload === "A") { orden = orden.sort((a, b) => a.name.localeCompare(b.name)); };
+            if (payload === "D") { orden = orden.sort((a, b) => b.name.localeCompare(a.name)); };
             return {
                 ...state,
                 myFavorites: orden
