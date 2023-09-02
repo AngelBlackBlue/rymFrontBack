@@ -26,7 +26,7 @@ const Detail = () =>{
                <h3>Status: {characters?.status}</h3>
                <h3>Specie: {characters?.species}</h3>
                <h3>Gender: {characters?.gender}</h3>
-               <h3>Origin: {characters?.origin?.name}</h3>
+               <h3>Origin: {characters?.origin}</h3>
             </div>
             <div >
             <img src={gif1} alt="" className={style.gif} />

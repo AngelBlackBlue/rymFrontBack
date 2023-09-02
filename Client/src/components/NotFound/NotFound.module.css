@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     overflow: hidden;
@@ -5,28 +6,43 @@ body {
 }
 
 .fondo {
-    background-image: url('../img/error404.gif');
+    background-image: url('../img/error404EscalaGris.gif');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    filter: saturate(234%);
-    -webkit-filter: saturate(234%);
-    -moz-filter: saturate(234%);
+
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal; */
 }
 
-.flexContainer {
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('../../font/get_schwifty.ttf') format('truetype');
+}
+
+.text {
+
+    margin: 0;
+
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content: normal;
-}
 
-.text{
+    filter: saturate(234%);
+    -webkit-filter: saturate(234%);
+    -moz-filter: saturate(234%);
 
-    color: azure;
-    size: 36rem;
+    font-family: 'MiFuentePersonalizada';
+    color: rgb(31, 222, 50, 0.75);
+    text-shadow: 4px 10px 3px rgba(0, 0, 0, 0.8);
+    font-size: 4rem;
 }

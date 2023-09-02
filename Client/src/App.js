@@ -6,16 +6,17 @@ import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form.jsx';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import Favorites from './components/Favorites/Favorites.jsx'
 import About from './components/About/About.jsx';
+import NotFound from './components/NotFound/NotFound.jsx'
 
 
 
 
 function App() {
-   
+
 
    const [characters, setCharacters] = useState([]);
 
@@ -43,12 +44,12 @@ function App() {
 
    }
 
-   const location = useLocation();
+   // const location = useLocation();
 
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
 
-   const login = async (userData, res)=> {
+   const login = async (userData, res) => {
 
 
       try {
@@ -61,7 +62,7 @@ function App() {
          // console.log(access)
          setAccess(access);
          access && navigate('/home');
-         
+
 
       } catch (error) {
 
@@ -73,21 +74,24 @@ function App() {
 
    }
 
-   useEffect(() => {
-      !access && navigate('/');
-   }, [access, navigate]);
+   // useEffect(() => {
+   //    !access && navigate('/');
+   // }, [access]);
 
    return (
 
       <div className={style.fondo}>
-         {location.pathname === '/' ? null : <Nav onSearch={onSearch} setAccess={setAccess} />}
+         {/* {location.pathname === '/' ? null : <Nav onSearch={onSearch} setAccess={setAccess} />} */}
+         {/* {location.pathname === '*' ? <NotFound /> : null} */}
          <main className={style.main}>
             <Routes>
                <Route path='/' element={<Form login={login} />} />
-               <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
-               <Route path='/about' element={<About/> }/>
-               <Route path='/detail/:id' element={<Detail />} />
-               <Route path='/favorites' element={<Favorites onClose={onClose} />} />              
+               <Route path='/home' element={<><Nav onSearch={onSearch} setAccess={setAccess} /> <Cards characters={characters} onClose={onClose} /></>} />
+               <Route path='/about' element={<><Nav onSearch={onSearch} setAccess={setAccess} /> <About /> </>} />
+               <Route path='/detail/:id' element={<><Nav onSearch={onSearch} setAccess={setAccess} /> <Detail /></>} />
+               <Route path='/favorites' element={<><Nav onSearch={onSearch} setAccess={setAccess} /> <Favorites onClose={onClose} /></>} />
+
+               <Route path='*' element={<NotFound />} />
             </Routes>
          </main>
       </div>
