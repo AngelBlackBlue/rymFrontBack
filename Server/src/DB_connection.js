@@ -9,16 +9,13 @@ const UserFuntion = require('../src/models/User');
 // Recuerda pasarle la información de tu archivo '.env'.
 
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
-// const sequelize = new Sequelize(
-
-//    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`,
-//    { logging: false, native: false }
-// );
-
 const sequelize = new Sequelize(
-   DB_DEPLOY,
+
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`,
    { logging: false, native: false }
 );
+
+
 
 
 
